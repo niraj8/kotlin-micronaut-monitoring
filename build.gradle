@@ -49,6 +49,9 @@ test {
     useJUnitPlatform()
 }
 
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
+
 allOpen {
 	annotation("io.micronaut.aop.Around")
 }
